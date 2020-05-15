@@ -1,0 +1,20 @@
+<script>
+    class Employee {
+        constructor(name, basePay, bonus) {
+                this.name = name;
+                this.basePay = basePay;
+                this.bonus = bonus;
+            }
+            [Symbol.iterator]() {
+                return Object.entries(this)[Symbol.iterator]()
+            }
+    }
+    let emp1 = new Employee('zhang', 8000, 3000);
+    for (let ent of emp1) {
+        console.log(...ent);
+    }
+
+    let emp2 = new Employee('wang', 7500, 3200);
+    let arr = [...emp2];
+    console.log(...arr);
+</script>
